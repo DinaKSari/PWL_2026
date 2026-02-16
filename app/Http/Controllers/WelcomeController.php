@@ -7,3 +7,4 @@ public function hello() {
  return 'Hello World';
 }
 }
+?>

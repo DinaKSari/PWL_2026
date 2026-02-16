@@ -1,8 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\PhotoController;
 
-
+Route::resource('photos', PhotoController::class);
 //route basic
 Route::get('/hello', function () {
  return 'Hello World';
@@ -10,13 +13,16 @@ Route::get('/hello', function () {
 Route::get('/world', function () {
  return 'World';
 });
-Route::get('/about', function () {
+/*Route::get('/about', function () {
  return 'NIM 244107020072, Nama Dina Kumala Sari';
 });
 Route::get('/', function () {
     return 'Selamat Datang';
-});
-
+});*/
+//jawaban praktikum controller
+Route::get('/', [PageController::class,'index']);
+Route::get('/about', [PageController::class,'about']);
+Route::get('/posts/{post}/comments/{comment}', [PageController::class,'article']);
 //route berparameter
 /*Route::get('/user/{name}', function ($name) {
 return 'Nama saya '.$name;
@@ -77,3 +83,4 @@ Route::redirect('/here', '/there');
 // route view
 Route::view('/welcome', 'welcome');
 Route::view('/welcome', 'welcome', ['name' => 'Taylor']);*/
+Route::get('/hello', [WelcomeController::class,'hello']);
