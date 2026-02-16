@@ -73,3 +73,6 @@ Route::get('/event', [EventController::class, 'index']);
 });
 //redirect route
 Route::redirect('/here', '/there');
+// route view
+Route::view('/welcome', 'welcome');
+Route::view('/welcome', 'welcome', ['name' => 'Taylor']);
