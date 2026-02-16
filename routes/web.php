@@ -2,9 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return 'Selamat Datang';
-});
+//route basic
 Route::get('/hello', function () {
  return 'Hello World';
 });
@@ -14,3 +12,17 @@ Route::get('/world', function () {
 Route::get('/about', function () {
  return 'NIM 244107020072, Nama Dina Kumala Sari';
 });
+Route::get('/', function () {
+    return 'Selamat Datang';
+});
+
+//route berparameter
+Route::get('/user/{name}', function ($name) {
+return 'Nama saya '.$name;
+});
+//dua parameter
+Route::get('/posts/{post}/comments/{comment}', function
+($postId, $commentId) {
+return 'Pos ke-'.$postId." Komentar ke-: ".$commentId;
+});
+
