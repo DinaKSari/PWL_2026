@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 //route basic
 Route::get('/hello', function () {
  return 'Hello World';
@@ -19,7 +20,7 @@ Route::get('/', function () {
 //route berparameter
 /*Route::get('/user/{name}', function ($name) {
 return 'Nama saya '.$name;
-});*/
+});
 //dua parameter
 Route::get('/posts/{post}/comments/{comment}', function
 ($postId, $commentId) {
@@ -75,4 +76,4 @@ Route::get('/event', [EventController::class, 'index']);
 Route::redirect('/here', '/there');
 // route view
 Route::view('/welcome', 'welcome');
-Route::view('/welcome', 'welcome', ['name' => 'Taylor']);
+Route::view('/welcome', 'welcome', ['name' => 'Taylor']);*/
